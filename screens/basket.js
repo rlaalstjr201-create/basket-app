@@ -40,6 +40,7 @@ export function render(root, ctx) {
   }
   const b = asBasket(s.settings);
   const value = Object.values(s.values ?? {}).reduce((a, v) => a + v, 0);
+  const outsideValue = Object.values(s.outside_values ?? {}).reduce((a, v) => a + v, 0);
   const g = simpleGain(s, records);
   const held = s.positions ?? {};
   const outside = g && Object.keys(held).some((k) => Math.abs((held[k] ?? 0) - (g.shares[k] ?? 0)) > 1e-9);
@@ -53,6 +54,7 @@ export function render(root, ctx) {
     <header class="head">
       <p class="muted small">${b?.name ?? '내 바구니'} · ${when(s.updated_at)} 기준 · 모의계좌</p>
       <h1 class="title huge">${usd(value)}</h1>
+      ${outsideValue > 0 ? html`<p class="note">바구니 밖 보유 ${usd(outsideValue)}는 이 금액과 계산에서 뺐어요</p>` : ''}
       ${g ? html`<p class="muted">넣은 돈 ${usd(g.cost)} · 지금 ${g.now == null ? '가격 없음' : usd(g.now)}
           ${g.pct == null ? '' : html` · <strong class="ink">${signedPct(g.pct)}</strong>`}</p>
         <p class="note">단순 수익률, 기준가는 다음 단계${outside ? ' · 기록 전에 갖고 있던 주식은 뺐어요' : ''}</p>`
