@@ -55,6 +55,8 @@ export function render(root, ctx) {
       <p class="muted small">${b?.name ?? '내 바구니'} · ${when(s.updated_at)} 기준 · 모의계좌</p>
       <h1 class="title huge">${usd(value)}</h1>
       ${outsideValue > 0 ? html`<p class="note">바구니 밖 보유 ${usd(outsideValue)}는 이 금액과 계산에서 뺐어요</p>` : ''}
+      ${(s.corporate_actions ?? []).length ? html`<p class="note">기업 행사 반영 · ${s.corporate_actions.map((e) => e.text).join(' · ')}</p>` : ''}
+      ${s.corporate_check_error ? html`<p class="note">기업 행사 확인 실패(이번 계산은 보정 없이)</p>` : ''}
       ${g ? html`<p class="muted">넣은 돈 ${usd(g.cost)} · 지금 ${g.now == null ? '가격 없음' : usd(g.now)}
           ${g.pct == null ? '' : html` · <strong class="ink">${signedPct(g.pct)}</strong>`}</p>
         <p class="note">단순 수익률, 기준가는 다음 단계${outside ? ' · 기록 전에 갖고 있던 주식은 뺐어요' : ''}</p>`
