@@ -1,7 +1,7 @@
-import { cents, day, html, pct, usd } from '../format.js';
+import { cents, day, html, pct, symbol, usd } from '../format.js';
 import { asBasket } from '../model.js';
 
-export const title = '다음 매수 미리보기';
+export const title = '다음 매수';
 
 export function render(root, ctx) {
   const s = ctx.data.state ?? {};
@@ -18,7 +18,7 @@ export function render(root, ctx) {
     const after = p.weights_after?.[sym];
     const move = before == null ? '' : `지금 ${pct(before, 1)} → 산 뒤 ${pct(after ?? before, 1)}`;
     return html`<div class="line ${buy ? '' : 'dim'}">
-      <span class="stack"><span class="sym">${sym}</span>
+      <span class="stack">${symbol(sym, s.symbols)}
         <span class="${why ? 'warn-text' : 'muted'} small">${why ?? `소수점 시장가 · ${move}`}</span>
         ${why && move ? html`<span class="muted small">${move}</span>` : ''}</span>
       <strong>${cents(buy ?? 0)}</strong></div>`;
@@ -26,9 +26,8 @@ export function render(root, ctx) {
 
   root.innerHTML = html`<main class="screen">
     <header class="head">
-      <a class="back" href="#/basket">← 내 바구니</a>
       ${p ? html`<h1 class="title">${day(s.next_cycle)}<br>${cents(p.amount_cents)}로 이렇게 살 예정이에요</h1>`
-          : html`<h1 class="title">다음 매수 미리보기</h1>`}
+          : html`<h1 class="title">다음 매수</h1>`}
       <p class="muted small">자동 매수 · 부족한 쪽부터 · 달러 · 서버가 미리 계산한 값</p>
     </header>
     ${state === 'PAUSED' ? html`<p class="banner">일시정지 중이라 재개하기 전까지 이대로 사지 않아요</p>` : ''}

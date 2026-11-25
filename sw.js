@@ -1,10 +1,10 @@
 // 앱 껍데기만 보관한다. 데이터(Supabase)와 mock/ 응답은 절대 보관하지 않는다. 껍데기도 네트워크 먼저.
-const CACHE = 'basket-shell-v1';
+const CACHE = 'basket-shell-v2';
 const SHELL = [
   './', 'index.html', 'styles.css', 'manifest.webmanifest', 'icons/icon.svg', 'icons/icon-192.png',
   'app.js', 'api.js', 'auth.js', 'config.js', 'format.js', 'mock.js', 'model.js', 'requests.js',
   'screens/basket.js', 'screens/history.js', 'screens/login.js', 'screens/presets.js', 'screens/preview.js',
-  'screens/setup.js',
+  'screens/settings.js', 'screens/setup.js', 'screens/start.js', 'risk.json',
 ];
 const SHELL_URLS = new Set(SHELL.map((p) => new URL(p, self.registration.scope).href));
 

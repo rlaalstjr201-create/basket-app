@@ -8,6 +8,14 @@ export const STATES = {
   STOPPED: '멈춤',
 };
 
+// 처음 시작의 기본 바구니. 금액만 사용자가 정한다.
+export const DEFAULT_BASKET = { name: '기본 60/40', core: { SPY: 0.6, IEF: 0.4 }, satellite: {}, satellite_cap: 0,
+                                per_symbol_cap: 0, cycle: 'monthly', side: 'buy' };
+// 서버 요약(state.symbols)이 아직 없을 때 기본 바구니 종목에만 쓰는 이름표.
+const KNOWN = { SPY: { name: 'SPDR S&P 500 ETF Trust', class: '주식 ETF' },
+                IEF: { name: 'iShares 7-10 Year Treasury Bond ETF', class: '채권' } };
+export const symbolInfo = (sym, symbols) => symbols?.[sym] ?? KNOWN[sym] ?? null;
+
 export function asBasket(s) {
   if (!s) return null;
   if (!('targets' in s)) return s;
@@ -157,4 +165,11 @@ export function byMonth(records) {
     groups.get(key).push(r);
   }
   return [...groups.entries()].sort((a, b) => b[0].localeCompare(a[0])).map(([month, items]) => ({ month, items }));
+}
+
+// 목표 비율에서 2%p 넘게 어긋났으면, 다음 매수에서 가장 많이 사는 종목을 돌려준다.
+export function rebalanceHint(state) {
+  const off = basketRows(state).some((r) => r.now != null && Math.abs(r.now - r.target) > 0.02);
+  const top = Object.entries(state.preview?.buys ?? {}).sort((a, b) => b[1] - a[1])[0];
+  return off && top ? { sym: top[0], date: state.next_cycle } : null;
 }

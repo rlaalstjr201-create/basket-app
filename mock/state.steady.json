@@ -1,0 +1,98 @@
+{
+ "updated_at": "2026-11-26T09:00:00+00:00",
+ "subscription": {
+  "state": "ACTIVE",
+  "settings_hash": "6060606060606060606060606060606060606060606060606060606060606060",
+  "approved_at": "2026-09-25T15:00:00+00:00",
+  "anchor": "2026-09-25",
+  "events": [
+   [
+    "2026-09-25T15:00:00+00:00",
+    "ACTIVE",
+    "approve"
+   ]
+  ]
+ },
+ "settings": {
+  "name": "기본 60/40",
+  "core": {
+   "SPY": 0.6,
+   "IEF": 0.4
+  },
+  "satellite": {},
+  "satellite_cap": 0,
+  "per_symbol_cap": 0,
+  "amount_cents": 50000,
+  "cycle": "monthly",
+  "side": "buy"
+ },
+ "settings_hash": "6060606060606060606060606060606060606060606060606060606060606060",
+ "pending": null,
+ "account": {
+  "cash": 98500.0,
+  "equity": 100111.09,
+  "currency": "USD"
+ },
+ "positions": {
+  "SPY": 1.335505,
+  "IEF": 6.449751
+ },
+ "basket_shares": {
+  "SPY": 1.335505,
+  "IEF": 6.449751
+ },
+ "prices": {
+  "SPY": 820.0,
+  "IEF": 80.0
+ },
+ "values": {
+  "SPY": 1095.11,
+  "IEF": 515.98
+ },
+ "outside_values": {},
+ "corporate_actions": [],
+ "corporate_check_error": null,
+ "corporate_cash_pending_cents": 0,
+ "symbols": {
+  "SPY": {
+   "name": "State Street SPDR S&P 500 ETF Trust",
+   "class": "주식 ETF"
+  },
+  "IEF": {
+   "name": "iShares 7-10 Year Treasury Bond ETF",
+   "class": "채권"
+  }
+ },
+ "bought_months": [
+  "2026-09",
+  "2026-10",
+  "2026-11"
+ ],
+ "next_cycle": "2026-12-25",
+ "preview": {
+  "buys": {
+   "IEF": 32775,
+   "SPY": 17050
+  },
+  "skipped": {},
+  "cash_left_cents": 0,
+  "budget_cents": 49825,
+  "amount_cents": 50000,
+  "corporate_cash_cents": 0,
+  "est_fee": 1.2456,
+  "est_slippage": 0.4983,
+  "weights_before": {
+   "SPY": 0.6797323551136187,
+   "IEF": 0.3202676448863813
+  },
+  "weights_after": {
+   "SPY": 0.6000028444916419,
+   "IEF": 0.39999715550835807
+  }
+ },
+ "goal": {
+  "type": "steady",
+  "name": "꾸준히 하기",
+  "set_at": "2026-09-25T14:59:00+00:00"
+ }
+}

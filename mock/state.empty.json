@@ -1,0 +1,16 @@
+{
+ "updated_at": "2026-11-26T09:00:00+00:00",
+ "subscription": null,
+ "settings": null,
+ "goal": null,
+ "settings_hash": null,
+ "pending": null,
+ "account": {
+  "cash": 100000.0,
+  "equity": 100000.0,
+  "currency": "USD"
+ },
+ "positions": {},
+ "preview": null,
+ "next_cycle": null
+}

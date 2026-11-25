@@ -1,0 +1,116 @@
+[
+ {
+  "kind": "ORDERED",
+  "cycle_id": "2026-09-25",
+  "at": "2026-09-25T15:10:00+00:00",
+  "error": null,
+  "settings_hash": "6060606060606060606060606060606060606060606060606060606060606060",
+  "batch": {
+   "status": "DONE",
+   "orders": [
+    {
+     "client_order_id": "wa-2026-09-25-SPY",
+     "symbol": "SPY",
+     "side": "buy",
+     "qty": null,
+     "notional_cents": 30000
+    },
+    {
+     "client_order_id": "wa-2026-09-25-IEF",
+     "symbol": "IEF",
+     "side": "buy",
+     "qty": null,
+     "notional_cents": 20000
+    }
+   ]
+  },
+  "broker_status": {
+   "wa-2026-09-25-SPY": {
+    "status": "filled",
+    "filled_qty": "0.46875",
+    "filled_avg_price": "640.0"
+   },
+   "wa-2026-09-25-IEF": {
+    "status": "filled",
+    "filled_qty": "2.12766",
+    "filled_avg_price": "94.0"
+   }
+  }
+ },
+ {
+  "kind": "ORDERED",
+  "cycle_id": "2026-10-27",
+  "at": "2026-10-27T15:10:00+00:00",
+  "error": null,
+  "settings_hash": "6060606060606060606060606060606060606060606060606060606060606060",
+  "batch": {
+   "status": "DONE",
+   "orders": [
+    {
+     "client_order_id": "wa-2026-10-27-SPY",
+     "symbol": "SPY",
+     "side": "buy",
+     "qty": null,
+     "notional_cents": 30000
+    },
+    {
+     "client_order_id": "wa-2026-10-27-IEF",
+     "symbol": "IEF",
+     "side": "buy",
+     "qty": null,
+     "notional_cents": 20000
+    }
+   ]
+  },
+  "broker_status": {
+   "wa-2026-10-27-SPY": {
+    "status": "filled",
+    "filled_qty": "0.447761",
+    "filled_avg_price": "670.0"
+   },
+   "wa-2026-10-27-IEF": {
+    "status": "filled",
+    "filled_qty": "2.150538",
+    "filled_avg_price": "93.0"
+   }
+  }
+ },
+ {
+  "kind": "ORDERED",
+  "cycle_id": "2026-11-25",
+  "at": "2026-11-25T15:10:00+00:00",
+  "error": null,
+  "settings_hash": "6060606060606060606060606060606060606060606060606060606060606060",
+  "batch": {
+   "status": "DONE",
+   "orders": [
+    {
+     "client_order_id": "wa-2026-11-25-SPY",
+     "symbol": "SPY",
+     "side": "buy",
+     "qty": null,
+     "notional_cents": 30000
+    },
+    {
+     "client_order_id": "wa-2026-11-25-IEF",
+     "symbol": "IEF",
+     "side": "buy",
+     "qty": null,
+     "notional_cents": 20000
+    }
+   ]
+  },
+  "broker_status": {
+   "wa-2026-11-25-SPY": {
+    "status": "filled",
+    "filled_qty": "0.418994",
+    "filled_avg_price": "716.0"
+   },
+   "wa-2026-11-25-IEF": {
+    "status": "filled",
+    "filled_qty": "2.171553",
+    "filled_avg_price": "92.1"
+   }
+  }
+ }
+]

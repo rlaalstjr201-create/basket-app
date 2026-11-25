@@ -1,15 +1,18 @@
 import { cents, html, pct } from '../format.js';
 import { asBasket, blankForm, CYCLES, formFromBasket, toSettings } from '../model.js';
 
-export const title = '바구니 만들기';
+export const title = '고급 설정';
 
 let form = null;
 let proposal = null;
 let waiting = false;
+let afterStart = null;
 
-export function usePrefill(f) {
+// afterStart: 시작이 반영된 뒤 한 번 보낼 요청(처음 시작 흐름의 목표 저장).
+export function usePrefill(f, after = null) {
   form = f;
   proposal = null;
+  afterStart = after;
 }
 
 const rowView = (part, r, i) => html`<div class="edit-row">
@@ -44,8 +47,8 @@ export function render(root, ctx) {
   }
   root.innerHTML = html`<main class="screen">
     <header class="head">
-      <a class="back" href="#/basket">← 내 바구니</a>
-      <h1 class="title">바구니 만들기</h1>
+      <a class="back" href="#/settings">← 내 설정</a>
+      <h1 class="title">고급 설정 · 바구니 직접 정하기</h1>
       <p class="muted small">종목과 비율은 직접 정해요. <a href="#/presets">예시에서 시작</a>할 수도 있어요. 미국 종목만, 달러로 사요.</p>
     </header>
     <section class="card form">
@@ -135,9 +138,12 @@ export function render(root, ctx) {
       startBtn.disabled = true;
       const row = await ctx.send('start', { settings_hash: proposal.hash });
       if (row?.status === 'DONE') {
+        const then = afterStart;
         form = null;
         proposal = null;
+        afterStart = null;
         ctx.go('basket');
+        then?.();
       } else startBtn.disabled = false;
     };
   }

@@ -8,13 +8,17 @@ import * as history from './screens/history.js';
 import * as login from './screens/login.js';
 import * as presets from './screens/presets.js';
 import * as preview from './screens/preview.js';
+import * as settings from './screens/settings.js';
 import * as setup from './screens/setup.js';
+import * as start from './screens/start.js';
 
-const ROUTES = { login, basket, setup, preview, history, presets };
+const ROUTES = { login, basket, setup, preview, history, presets, start, settings };
+const TABS = [['basket', '홈'], ['preview', '다음 매수'], ['history', '내역'], ['settings', '내 설정']];
 const OPEN = new Set(['login']);
 const NO_DATA = new Set(['login', 'presets']);
 
 const root = document.getElementById('app');
+const tabs = document.getElementById('tabs');
 let data = null;
 
 const routeName = () => location.hash.replace(/^#\/?/, '') || 'basket';
@@ -49,6 +53,10 @@ async function render() {
     }
   }
   if (routeName() !== name) return;
+  const tabbed = TABS.some(([t]) => t === name);
+  document.body.classList.toggle('has-tabs', tabbed);
+  tabs.hidden = !tabbed;
+  tabs.innerHTML = html`${TABS.map(([t, label]) => html`<a href="#/${t}"${t === name ? html` aria-current="page"` : ''}>${label}</a>`)}`.toString();
   screen.render(root, ctx);
   document.title = `${screen.title} · 내 바구니`;
 }

@@ -88,5 +88,36 @@
    "AAPL": 0.0958,
    "MSFT": 0.0542
   }
- }
+ },
+ "goal": null,
+ "symbols": {
+  "VTI": {
+   "name": "Vanguard Total Stock Market ETF",
+   "class": "주식 ETF"
+  },
+  "VXUS": {
+   "name": "Vanguard Total International Stock ETF",
+   "class": "주식 ETF"
+  },
+  "BND": {
+   "name": "Vanguard Total Bond Market ETF",
+   "class": "채권"
+  },
+  "AAPL": {
+   "name": "Apple Inc. Common Stock",
+   "class": "개별 주식"
+  },
+  "MSFT": {
+   "name": "Microsoft Corporation Common Stock",
+   "class": "개별 주식"
+  }
+ },
+ "bought_months": [
+  "2026-09",
+  "2026-10",
+  "2026-11"
+ ],
+ "outside_values": {},
+ "corporate_actions": [],
+ "corporate_cash_pending_cents": 0
 }

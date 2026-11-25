@@ -16,7 +16,7 @@ let chosen = 'base';
 export function render(root, ctx) {
   root.innerHTML = html`<main class="screen">
     <header class="head">
-      <a class="back" href="#/setup">← 바구니 만들기</a>
+      <a class="back" href="#/setup">← 고급 설정</a>
       <h1 class="title">어떤 비율로 시작할까요?</h1>
       <p class="muted small">예시이며 투자 권유가 아닙니다. 고른 뒤 마음대로 고칠 수 있어요.</p>
     </header>
