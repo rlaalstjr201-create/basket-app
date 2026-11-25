@@ -32,6 +32,7 @@ export function render(root, ctx) {
       <p class="muted small">자동 매수 · 부족한 쪽부터 · 달러 · 서버가 미리 계산한 값</p>
     </header>
     ${state === 'PAUSED' ? html`<p class="banner">일시정지 중이라 재개하기 전까지 이대로 사지 않아요</p>` : ''}
+    ${p && p.corporate_cash_cents > 0 ? html`<p class="banner">합병·상환으로 받은 현금 ${cents(p.corporate_cash_cents)}도 이번 회차에 함께 넣어요</p>` : ''}
     ${p ? html`<section class="card list">${syms.map(row)}</section>
       <section class="sums">
         <div><span class="muted">예상 수수료</span><span>${usd(p.est_fee)}</span></div>
