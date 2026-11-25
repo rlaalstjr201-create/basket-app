@@ -58,7 +58,7 @@ async function render() {
   tabs.hidden = !tabbed;
   tabs.innerHTML = html`${TABS.map(([t, label]) => html`<a href="#/${t}"${t === name ? html` aria-current="page"` : ''}>${label}</a>`)}`.toString();
   screen.render(root, ctx);
-  document.title = `${screen.title} · 내 바구니`;
+  document.title = `${screen.title} · 꾸준투자`;
 }
 
 if (api.mock) document.getElementById('mock-flag').hidden = false;

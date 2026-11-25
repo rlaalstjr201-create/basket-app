@@ -6,7 +6,7 @@ export const title = '들어가기';
 export function render(root, ctx) {
   root.innerHTML = html`<main class="screen login">
     <header class="head">
-      <h1 class="title big">내 바구니</h1>
+      <h1 class="title big">꾸준투자</h1>
       <p class="muted">자동 매수 상태를 보고, 시작·일시정지·건너뛰기를 눌러요. 지금은 모의계좌(달러)예요.</p>
     </header>
     <div class="spacer"></div>
