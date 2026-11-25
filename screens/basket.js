@@ -94,10 +94,7 @@ export function render(root, ctx) {
         </ul>
       </details>
     </header>
-    ${statusCard(s)}
-    ${canRestart ? html`<button type="button" class="btn" id="restart">지금 설정 그대로 다시 시작</button>
-      <p class="note">멈춘 이유를 해결했다면 눌러 주세요. 설정은 바뀌지 않고, 다음 회차부터 다시 사요.</p>` : ''}
-    ${hint ? html`<p class="banner">비율이 목표와 조금 달라요. ${day(hint.date)} 다음 매수 때 ${symbol(hint.sym, s.symbols)} 쪽을 더 사서 맞춰요.</p>` : ''}
+    ${state === 'ACTIVE' ? '' : statusCard(s)}
     ${rows.length ? html`<section class="card track" aria-label="계획대로 가고 있나요">
       <h2 class="lead">계획대로 가고 있나요</h2>
       ${rows.map((r) => {
@@ -109,8 +106,12 @@ export function render(root, ctx) {
             <span class="fill" style="width:${((r.now ?? 0) * 100).toFixed(1)}%"></span>
             <span class="mark" style="left:${(r.target * 100).toFixed(1)}%"></span></div></div>`;
       })}
-      <p class="note">세로선이 목표예요. ±2%p를 넘으면 다음 매수 때 모자란 쪽을 더 사요 · ${b.name} · 팔지 않아요</p>
+      ${hint ? html`<p class="note warn-text">${day(hint.date)} 매수 때 ${hint.sym} 쪽을 더 사서 맞춰요</p>` : ''}
+      <p class="note">세로선이 목표예요 · 팔지 않고 모자란 쪽을 더 사서 맞춰요</p>
     </section>` : ''}
+    ${state === 'ACTIVE' ? statusCard(s) : ''}
+    ${canRestart ? html`<button type="button" class="btn" id="restart">지금 설정 그대로 다시 시작</button>
+      <p class="note">멈춘 이유를 해결했다면 눌러 주세요. 설정은 바뀌지 않고, 다음 회차부터 다시 사요.</p>` : ''}
   </main>`.toString();
 
   const rs = root.querySelector('#restart');
