@@ -49,8 +49,9 @@ export function render(root, ctx) {
     <header class="head">
       <a class="back" href="#/settings">← 내 설정</a>
       <h1 class="title">고급 설정 · 바구니 직접 정하기</h1>
-      <p class="muted small">종목과 비율은 직접 정해요. <a href="#/presets">예시에서 시작</a>할 수도 있어요. 미국 종목만, 달러로 사요.</p>
+      <p class="muted small">종목과 비율은 직접 정해요. 미국 종목만, 달러로 사요.</p>
     </header>
+    <a class="btn soft two" href="#/presets">예시 비율에서 고르기<span class="muted small">60/40 · 버핏식 · 올웨더식 · 나이 기준</span></a>
     <section class="card form">
       <label class="field"><span>바구니 이름</span><input type="text" class="name" value="${form.name}" data-key="name" aria-label="바구니 이름"></label>
     </section>
