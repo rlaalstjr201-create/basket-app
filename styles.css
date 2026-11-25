@@ -164,3 +164,5 @@ input[type="text"], input[type="date"] { min-height: 44px; border: 1px solid var
 .age { padding: 0 4px; }
 .age input { width: 88px; min-height: 44px; padding: 0 12px; border: 1px solid var(--field); border-radius: 12px; font-size: 16px; text-align: right; }
 .btn.two { flex-direction: column; gap: 2px; padding: 10px 16px; text-align: center; }
+.notes summary { display: inline-block; min-height: 32px; color: var(--muted); font-size: 13px; text-decoration: underline; cursor: pointer; }
+.notes ul { margin: 4px 0 0; padding-left: 18px; }

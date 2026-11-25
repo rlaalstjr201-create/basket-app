@@ -14,7 +14,7 @@ function hero(s, g, value) {
   const money = html`<div class="kv"><span class="muted">넣은 돈</span><strong>${g ? usd(g.cost) : '$0.00'}</strong></div>
     <div class="kv"><span class="muted">지금 가치</span><strong>${usd(value)}${g?.pct == null ? '' : html` <span class="muted small">(${signedPct(g.pct)})</span>`}</strong></div>
     ${s.performance ? html`<div class="kv"><span class="muted">기준가 (시작 1,000)</span><strong>${s.performance.nav.toLocaleString('en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 })}</strong></div>
-      ${s.performance.benchmark ? html`<p class="note">같은 날 같은 돈을 S&amp;P 500(SPY)에 넣었다면 ${usd(s.performance.benchmark.value)} (${signedPct(s.performance.benchmark.simple_return)}) · 배당 미포함</p>` : ''}` : ''}`;
+      ${s.performance.benchmark ? html`<div class="kv"><span class="muted">S&amp;P 500에 넣었다면</span><strong>${usd(s.performance.benchmark.value)} <span class="muted small">(${signedPct(s.performance.benchmark.simple_return)})</span></strong></div>` : ''}` : ''}`;
   if (goal?.type === 'target') {
     const target = goal.target_cents / 100;
     const done = Math.min(value / target, 1);
@@ -80,10 +80,19 @@ export function render(root, ctx) {
   root.innerHTML = html`<main class="screen">
     <header class="head">
       ${hero(s, g, value)}
-      <p class="note">원금 손실이 날 수 있어요 · 모의계좌 · ${when(s.updated_at)} 기준${g ? ' · 단순 수익률' : ''}${outside ? ' · 기록 전에 갖고 있던 주식은 뺐어요' : ''}</p>
-      ${outsideValue > 0 ? html`<p class="note">바구니 밖 보유 ${usd(outsideValue)}는 이 금액과 계산에서 뺐어요</p>` : ''}
-      ${(s.corporate_actions ?? []).length ? html`<p class="note">기업 행사 반영 · ${s.corporate_actions.map((e) => e.text).join(' · ')}</p>` : ''}
+      <p class="note">모의계좌 · ${when(s.updated_at)} 기준</p>
       ${s.corporate_check_error ? html`<p class="note">기업 행사 확인 실패(이번 계산은 보정 없이)</p>` : ''}
+      <details class="notes">
+        <summary>숫자 설명</summary>
+        <ul class="note">
+          <li>원금 손실이 날 수 있어요. 투자 권유가 아니에요.</li>
+          ${g ? html`<li>수익률은 넣은 돈 대비 단순 수익률이에요.</li>` : ''}
+          ${s.performance?.benchmark ? html`<li>S&amp;P 500 비교는 같은 날 같은 돈을 SPY에 넣었다고 친 값이에요. 배당은 빠져 있어요.</li>` : ''}
+          ${outside ? html`<li>앱이 기록을 시작하기 전에 갖고 있던 주식은 뺐어요.</li>` : ''}
+          ${outsideValue > 0 ? html`<li>바구니 밖 보유 ${usd(outsideValue)}는 금액과 계산에서 뺐어요.</li>` : ''}
+          ${(s.corporate_actions ?? []).length ? html`<li>기업 행사 반영 · ${s.corporate_actions.map((e) => e.text).join(' · ')}</li>` : ''}
+        </ul>
+      </details>
     </header>
     ${statusCard(s)}
     ${canRestart ? html`<button type="button" class="btn" id="restart">지금 설정 그대로 다시 시작</button>
