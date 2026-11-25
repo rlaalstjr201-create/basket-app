@@ -64,9 +64,12 @@ export function createMock(name) {
       return { settings_hash: h };
     }
     if (kind === 'start') {
-      if (!s.pending || payload.settings_hash !== s.pending.settings_hash) refuse('화면에 보인 설정과 제안된 설정이 다름(해시 불일치)');
-      s.settings = s.pending.settings;
-      s.settings_hash = s.pending.settings_hash;
+      if (s.pending && payload.settings_hash === s.pending.settings_hash) {
+        s.settings = s.pending.settings;
+        s.settings_hash = s.pending.settings_hash;
+      } else if (payload.settings_hash !== s.settings_hash) {
+        refuse('화면에 보인 설정과 제안된 설정이 다름(해시 불일치)');
+      }
       move('approve', 'ACTIVE');
       Object.assign(sub, { settings_hash: s.settings_hash, approved_at: now() });
       s.pending = null;

@@ -47,6 +47,7 @@ export function render(root, ctx) {
   const core = b ? Object.values(b.core).reduce((a, w) => a + w, 0) : 0;
   const state = s.subscription?.state;
   const toggle = state === 'ACTIVE' ? ['pause', '일시정지'] : state === 'PAUSED' ? ['resume', '재개'] : null;
+  const canRestart = (state === 'NEEDS_APPROVAL' || state === 'STOPPED') && s.settings_hash;
 
   root.innerHTML = html`<main class="screen">
     <header class="head">
@@ -58,6 +59,8 @@ export function render(root, ctx) {
         : html`<p class="muted">아직 체결된 매수 기록이 없어요</p>`}
     </header>
     ${statusCard(s)}
+    ${canRestart ? html`<button type="button" class="btn" id="restart">지금 설정 그대로 다시 시작</button>
+      <p class="note">멈춘 이유를 해결했다면 눌러 주세요. 설정은 바뀌지 않고, 다음 회차부터 다시 사요.</p>` : ''}
     ${rows.length ? html`<details class="card fold">
       <summary>바구니 안 보기</summary>
       <div class="rows">
@@ -73,6 +76,8 @@ export function render(root, ctx) {
     </footer>
   </main>`.toString();
 
+  const rs = root.querySelector('#restart');
+  if (rs) rs.onclick = () => ctx.send('start', { settings_hash: s.settings_hash });
   const t = root.querySelector('#toggle');
   if (t) t.onclick = () => ctx.send(t.dataset.kind, {});
   root.querySelector('#out').onclick = () => { signOut(); ctx.go('login'); };
