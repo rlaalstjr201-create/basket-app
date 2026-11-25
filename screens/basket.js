@@ -12,7 +12,9 @@ const monthsBetween = (fromIso, toIso) => {
 function hero(s, g, value) {
   const goal = s.goal;
   const money = html`<div class="kv"><span class="muted">넣은 돈</span><strong>${g ? usd(g.cost) : '$0.00'}</strong></div>
-    <div class="kv"><span class="muted">지금 가치</span><strong>${usd(value)}${g?.pct == null ? '' : html` <span class="muted small">(${signedPct(g.pct)})</span>`}</strong></div>`;
+    <div class="kv"><span class="muted">지금 가치</span><strong>${usd(value)}${g?.pct == null ? '' : html` <span class="muted small">(${signedPct(g.pct)})</span>`}</strong></div>
+    ${s.performance ? html`<div class="kv"><span class="muted">기준가 (시작 1,000)</span><strong>${s.performance.nav.toLocaleString('en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 })}</strong></div>
+      ${s.performance.benchmark ? html`<p class="note">같은 날 같은 돈을 S&amp;P 500(SPY)에 넣었다면 ${usd(s.performance.benchmark.value)} (${signedPct(s.performance.benchmark.simple_return)}) · 배당 미포함</p>` : ''}` : ''}`;
   if (goal?.type === 'target') {
     const target = goal.target_cents / 100;
     const done = Math.min(value / target, 1);
