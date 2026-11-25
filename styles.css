@@ -153,3 +153,11 @@ input[type="text"], input[type="date"] { min-height: 44px; border: 1px solid var
   font-size: 16px; text-align: left; text-decoration: none; color: var(--ink); cursor: pointer; }
 .menu-item:last-child { border-bottom: 0; }
 .menu-item.static { cursor: default; }
+
+.track { display: flex; flex-direction: column; gap: 12px; }
+.track h2 { margin: 0; font-size: 16px; }
+.trow { display: flex; flex-direction: column; gap: 6px; }
+.trow .off { color: var(--accent-dark); }
+.tbar { position: relative; height: 10px; border-radius: 5px; background: var(--line); }
+.tbar .fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 5px; background: #4A4945; }
+.tbar .mark { position: absolute; top: -4px; bottom: -4px; width: 2px; margin-left: -1px; background: var(--ink); }
