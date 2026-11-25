@@ -1,5 +1,5 @@
 // 앱 껍데기만 보관한다. 데이터(Supabase)와 mock/ 응답은 절대 보관하지 않는다. 껍데기도 네트워크 먼저.
-const CACHE = 'basket-shell-v5';
+const CACHE = 'basket-shell-v6';
 const SHELL = [
   './', 'index.html', 'styles.css', 'manifest.webmanifest', 'icons/icon.svg', 'icons/icon-192.png',
   'app.js', 'api.js', 'auth.js', 'config.js', 'format.js', 'mock.js', 'model.js', 'requests.js',
