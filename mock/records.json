@@ -1,0 +1,212 @@
+[
+ {
+  "kind": "ORDERED",
+  "cycle_id": "2026-09-25",
+  "at": "2026-09-25T15:10:00+00:00",
+  "error": null,
+  "settings_hash": "0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a",
+  "batch": {
+   "status": "DONE",
+   "orders": [
+    {
+     "client_order_id": "wa-2026-09-25-VTI",
+     "symbol": "VTI",
+     "side": "buy",
+     "qty": null,
+     "notional_cents": 50000
+    },
+    {
+     "client_order_id": "wa-2026-09-25-VXUS",
+     "symbol": "VXUS",
+     "side": "buy",
+     "qty": null,
+     "notional_cents": 20000
+    },
+    {
+     "client_order_id": "wa-2026-09-25-BND",
+     "symbol": "BND",
+     "side": "buy",
+     "qty": null,
+     "notional_cents": 15000
+    },
+    {
+     "client_order_id": "wa-2026-09-25-AAPL",
+     "symbol": "AAPL",
+     "side": "buy",
+     "qty": null,
+     "notional_cents": 10000
+    },
+    {
+     "client_order_id": "wa-2026-09-25-MSFT",
+     "symbol": "MSFT",
+     "side": "buy",
+     "qty": null,
+     "notional_cents": 5000
+    }
+   ]
+  },
+  "broker_status": {
+   "wa-2026-09-25-VTI": {
+    "status": "filled",
+    "filled_qty": "1.712",
+    "filled_avg_price": "292.06"
+   },
+   "wa-2026-09-25-VXUS": {
+    "status": "filled",
+    "filled_qty": "3.2",
+    "filled_avg_price": "62.5"
+   },
+   "wa-2026-09-25-BND": {
+    "status": "filled",
+    "filled_qty": "2.08",
+    "filled_avg_price": "72.1"
+   },
+   "wa-2026-09-25-AAPL": {
+    "status": "filled",
+    "filled_qty": "0.44",
+    "filled_avg_price": "227.3"
+   },
+   "wa-2026-09-25-MSFT": {
+    "status": "filled",
+    "filled_qty": "0.11",
+    "filled_avg_price": "454.5"
+   }
+  },
+  "prices": {},
+  "est_cost_usd": {
+   "fee": 2.5,
+   "slippage": 1.0
+  }
+ },
+ {
+  "kind": "HALTED",
+  "cycle_id": "2026-10-27",
+  "at": "2026-10-27T15:01:00+00:00",
+  "reason": "가격을 받지 못해 멈춤"
+ },
+ {
+  "kind": "ORDERED",
+  "cycle_id": "2026-10-27",
+  "at": "2026-10-28T15:10:00+00:00",
+  "error": null,
+  "settings_hash": "0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a",
+  "batch": {
+   "status": "DONE",
+   "orders": [
+    {
+     "client_order_id": "wa-2026-10-27-VTI",
+     "symbol": "VTI",
+     "side": "buy",
+     "qty": null,
+     "notional_cents": 60000
+    },
+    {
+     "client_order_id": "wa-2026-10-27-BND",
+     "symbol": "BND",
+     "side": "buy",
+     "qty": null,
+     "notional_cents": 3000
+    },
+    {
+     "client_order_id": "wa-2026-10-27-AAPL",
+     "symbol": "AAPL",
+     "side": "buy",
+     "qty": null,
+     "notional_cents": 6100
+    }
+   ]
+  },
+  "broker_status": {
+   "wa-2026-10-27-VTI": {
+    "status": "partially_filled",
+    "filled_qty": "1.0",
+    "filled_avg_price": "296.0"
+   },
+   "wa-2026-10-27-BND": {
+    "status": "new",
+    "filled_qty": "0",
+    "filled_avg_price": null
+   },
+   "wa-2026-10-27-AAPL": {
+    "status": "filled",
+    "filled_qty": "0.25",
+    "filled_avg_price": "244.0"
+   }
+  },
+  "prices": {},
+  "est_cost_usd": {
+   "fee": 2.5,
+   "slippage": 1.0
+  }
+ },
+ {
+  "kind": "ORDERED",
+  "cycle_id": "2026-10-27",
+  "at": "2026-10-28T16:10:00+00:00",
+  "error": null,
+  "settings_hash": "0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a",
+  "batch": {
+   "status": "DONE",
+   "orders": [
+    {
+     "client_order_id": "wa-2026-10-27-VTI",
+     "symbol": "VTI",
+     "side": "buy",
+     "qty": null,
+     "notional_cents": 60000
+    },
+    {
+     "client_order_id": "wa-2026-10-27-BND",
+     "symbol": "BND",
+     "side": "buy",
+     "qty": null,
+     "notional_cents": 3000
+    },
+    {
+     "client_order_id": "wa-2026-10-27-AAPL",
+     "symbol": "AAPL",
+     "side": "buy",
+     "qty": null,
+     "notional_cents": 6100
+    }
+   ]
+  },
+  "broker_status": {
+   "wa-2026-10-27-VTI": {
+    "status": "filled",
+    "filled_qty": "2.026",
+    "filled_avg_price": "296.1"
+   },
+   "wa-2026-10-27-BND": {
+    "status": "filled",
+    "filled_qty": "0.32",
+    "filled_avg_price": "72.3"
+   },
+   "wa-2026-10-27-AAPL": {
+    "status": "filled",
+    "filled_qty": "0.25",
+    "filled_avg_price": "244.0"
+   }
+  },
+  "prices": {},
+  "est_cost_usd": {
+   "fee": 2.5,
+   "slippage": 1.0
+  }
+ },
+ {
+  "kind": "MISSED",
+  "cycle_id": "2026-11-10",
+  "at": "2026-11-13T15:00:00+00:00"
+ },
+ {
+  "kind": "NO_ORDERS",
+  "cycle_id": "2026-11-25",
+  "at": "2026-11-25T15:05:00+00:00",
+  "reason": "살 것이 없음",
+  "skipped": {
+   "AAPL": "종목당 상한 도달",
+   "MSFT": "1달러 미만이라 다음 회차로"
+  }
+ }
+]

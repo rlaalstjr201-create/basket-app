@@ -1,0 +1,65 @@
+{
+ "prices": {
+  "IEF": 92.245,
+  "SPY": 711.85
+ },
+ "values": {
+  "IEF": 553.47,
+  "SPY": 1423.7
+ },
+ "account": {
+  "cash": 98034.71,
+  "equity": 100011.95,
+  "currency": "USD"
+ },
+ "pending": null,
+ "preview": {
+  "buys": {
+   "IEF": 63600,
+   "SPY": 36050
+  },
+  "est_fee": 2.49125,
+  "skipped": {},
+  "amount_cents": 100000,
+  "budget_cents": 99651,
+  "est_slippage": 0.9965,
+  "weights_after": {
+   "IEF": 0.4000006725695857,
+   "SPY": 0.5999993274304143
+  },
+  "weights_before": {
+   "IEF": 0.2799304055796922,
+   "SPY": 0.7200695944203078
+  },
+  "cash_left_cents": 1
+ },
+ "settings": {
+  "side": "buy",
+  "cycle": "monthly",
+  "targets": {
+   "IEF": 0.4,
+   "SPY": 0.6
+  },
+  "amount_cents": 100000
+ },
+ "positions": {
+  "IEF": 6.0,
+  "SPY": 2.0
+ },
+ "next_cycle": "2026-12-25",
+ "updated_at": "2026-11-25T18:11:35+00:00",
+ "subscription": {
+  "state": "ACTIVE",
+  "anchor": "2026-11-25",
+  "events": [
+   [
+    "2026-11-25T17:26:42+00:00",
+    "ACTIVE",
+    "approve"
+   ]
+  ],
+  "approved_at": "2026-11-25T17:26:42+00:00",
+  "settings_hash": "b5d2fbd9895369db9381e80fcaa23cdb7c1743fd59d2c4da83b3bf98673f4810"
+ },
+ "settings_hash": "b5d2fbd9895369db9381e80fcaa23cdb7c1743fd59d2c4da83b3bf98673f4810"
+}

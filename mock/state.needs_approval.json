@@ -1,0 +1,97 @@
+{
+ "updated_at": "2026-11-26T09:00:00+00:00",
+ "subscription": {
+  "state": "NEEDS_APPROVAL",
+  "settings_hash": "0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a",
+  "approved_at": "2026-09-25T15:00:00+00:00",
+  "anchor": "2026-09-25",
+  "events": [
+   [
+    "2026-09-25T15:00:00+00:00",
+    "ACTIVE",
+    "approve"
+   ],
+   [
+    "2026-11-25T15:05:00+00:00",
+    "NEEDS_APPROVAL",
+    "현금이 회차 금액보다 적음"
+   ]
+  ]
+ },
+ "settings": {
+  "name": "내 바구니",
+  "core": {
+   "VTI": 0.5,
+   "VXUS": 0.2,
+   "BND": 0.15
+  },
+  "satellite": {
+   "AAPL": 0.1,
+   "MSFT": 0.05
+  },
+  "satellite_cap": 0.2,
+  "per_symbol_cap": 0.1,
+  "amount_cents": 100000,
+  "cycle": "monthly",
+  "side": "buy"
+ },
+ "settings_hash": "0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a0f3a",
+ "pending": null,
+ "account": {
+  "cash": 98210.55,
+  "equity": 100000.0,
+  "currency": "USD"
+ },
+ "positions": {
+  "VTI": 4.1,
+  "VXUS": 3.2,
+  "BND": 2.4,
+  "AAPL": 1.05,
+  "MSFT": 0.21
+ },
+ "prices": {
+  "VTI": 301.2,
+  "VXUS": 66.8,
+  "BND": 72.4,
+  "AAPL": 240.5,
+  "MSFT": 455.0
+ },
+ "values": {
+  "VTI": 1234.92,
+  "VXUS": 213.76,
+  "BND": 173.76,
+  "AAPL": 252.53,
+  "MSFT": 95.55
+ },
+ "next_cycle": "2026-12-25",
+ "preview": {
+  "buys": {
+   "VTI": 52310,
+   "VXUS": 21040,
+   "BND": 18200,
+   "MSFT": 7500
+  },
+  "skipped": {
+   "AAPL": "종목당 상한 도달"
+  },
+  "cash_left_cents": 601,
+  "budget_cents": 99651,
+  "amount_cents": 100000,
+  "est_fee": 2.48,
+  "est_slippage": 0.99,
+  "weights_before": {
+   "VTI": 0.626697521466415,
+   "VXUS": 0.10847898016767148,
+   "BND": 0.08817976980695451,
+   "AAPL": 0.1281539898097964,
+   "MSFT": 0.04848973874916266
+  },
+  "weights_after": {
+   "VTI": 0.5,
+   "VXUS": 0.2,
+   "BND": 0.15,
+   "AAPL": 0.0958,
+   "MSFT": 0.0542
+  }
+ }
+}
